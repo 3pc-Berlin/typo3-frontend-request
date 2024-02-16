@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+  
+  Helhum\Typo3FrontendRequest\:
+    resource: '../src/*'
+    
+  Helhum\Typo3FrontendRequest\Command\FrontendRequestCommand:
+    tags:
+      -
+        name: 'console.command'
+        command: 'typo3:frontend:request'
+        description: 'Submit frontend request'
