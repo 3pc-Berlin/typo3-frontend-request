@@ -55,7 +55,7 @@ class FrontendRequestCommand extends Command
 
             $response = $typo3Client->send($request);
 
-            $output = (string)$response->getBody();
+            $output->write((string)$response->getBody());
         }
 
         return 0;
